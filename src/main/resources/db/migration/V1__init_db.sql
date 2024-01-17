@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS note;
-
 CREATE TABLE note (
     id IDENTITY PRIMARY KEY,
     title VARCHAR(100),

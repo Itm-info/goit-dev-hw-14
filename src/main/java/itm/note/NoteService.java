@@ -23,13 +23,11 @@ public class NoteService {
     }
 
     public List<Note> listAll() {
-        List<Note> res = new ArrayList<>();
-        if( repository.count() > 0 ) repository.findAll().forEach(res::add);
-        return res;
+        return repository.findAll();
     }
 
     public Note add(Note note) {
-        Random random = new Random();
+        /*Random random = new Random();
 
         if ( Objects.isNull(note.getId()) ) note.setId(Math.abs(random.nextLong())); // Why is this required?
 
@@ -37,7 +35,8 @@ public class NoteService {
             note.setId(Math.abs(random.nextLong()));
         }
 
-        return repository.save(note);
+        return repository.save(note);*/
+        return repository.saveAndFlush(note);
     }
 
     public void deleteById(long id) throws NoteNotFoundException {

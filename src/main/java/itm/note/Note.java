@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "note")
 public class Note {
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY) // Why does it not work?
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Why does it not work?
     private Long id;
 
     private String title;
