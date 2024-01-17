@@ -27,15 +27,6 @@ public class NoteService {
     }
 
     public Note add(Note note) {
-        /*Random random = new Random();
-
-        if ( Objects.isNull(note.getId()) ) note.setId(Math.abs(random.nextLong())); // Why is this required?
-
-        while ( repository.existsById( note.getId()) ) {
-            note.setId(Math.abs(random.nextLong()));
-        }
-
-        return repository.save(note);*/
         return repository.saveAndFlush(note);
     }
 
